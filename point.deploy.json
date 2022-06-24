@@ -1,0 +1,7 @@
+{
+  "version": 0.5,
+  "target": "ynet_uniswap.point",
+  "rootDir": "build",
+  "keyvalue": {},
+  "contracts": []
+}

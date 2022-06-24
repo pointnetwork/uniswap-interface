@@ -140,7 +140,9 @@ function WrappedStatusIcon({ connector }: { connector: Connector }) {
 }
 
 function Web3StatusInner() {
-  const { account, connector, chainId, ENSName } = useWeb3React()
+  const web3Data = useWeb3React()
+  const { account, connector, ENSName } = web3Data
+  const chainId = web3Data.chainId || 4 // default to Rinkeby.
 
   const error = useAppSelector((state) => state.wallet.errorByWallet[getWalletForConnector(connector)])
 

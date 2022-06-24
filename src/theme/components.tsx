@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components/macro'
 
 import { anonymizeLink } from '../utils/anonymizeLink'
+import { getPointLink } from '../utils/pointLink'
 
 export const ButtonText = styled.button`
   outline: none;
@@ -196,7 +197,8 @@ export function ExternalLink({
   rel = 'noopener noreferrer',
   ...rest
 }: Omit<HTMLProps<HTMLAnchorElement>, 'as' | 'ref' | 'onClick'> & { href: string }) {
-  return <StyledLink target={target} rel={rel} href={href} onClick={handleClickExternalLink} {...rest} />
+  const pointLink = getPointLink(href)
+  return <StyledLink target={target} rel={rel} href={pointLink} onClick={handleClickExternalLink} {...rest} />
 }
 
 export function ExternalLinkIcon({
